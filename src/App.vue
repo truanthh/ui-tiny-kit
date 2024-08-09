@@ -2,7 +2,9 @@
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
-<template></template>
+<template>
+  <RouterView />
+</template>
 
 <style>
 @import "./styles/global.css";
