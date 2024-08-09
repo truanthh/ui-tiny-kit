@@ -4,4 +4,12 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template></template>
 
-<style scoped></style>
+<style>
+@import "./styles/global.css";
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialised;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
