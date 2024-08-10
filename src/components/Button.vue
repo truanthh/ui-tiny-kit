@@ -1,4 +1,6 @@
 <script setup>
+import { Icon } from "@iconify/vue";
+
 const props = defineProps({
   label: {
     type: String,
@@ -8,11 +10,43 @@ const props = defineProps({
     type: String,
     default: "primary",
   },
+  disabled: {
+    type: Boolean,
+    required: false,
+  },
+  rounded: {
+    type: Boolean,
+    required: false,
+  },
+  outlined: {
+    type: Boolean,
+    required: false,
+  },
+  icon: {
+    type: String,
+    required: false,
+  },
 });
 </script>
 
 <template>
-  <button :class="['btn', `btn_${color}`]">{{ label }}</button>
+  <button
+    :class="[
+      'btn',
+      `btn_${color}`,
+      { btn_rounded: rounded },
+      { btn_outlined: outlined },
+      { btn_icon: icon },
+    ]"
+    :disabled="disabled"
+  >
+    <span v-if="icon">
+      <Icon :icon="icon" :style="{ fontSize: '20px' }" />
+    </span>
+    <span v-else>
+      {{ label }}
+    </span>
+  </button>
 </template>
 
 <style lang="scss" scoped>
