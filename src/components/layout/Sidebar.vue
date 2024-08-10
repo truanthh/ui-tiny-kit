@@ -41,7 +41,12 @@ const links = ref([
     font-weight: bold;
     margin-bottom: 10px;
     &:hover {
-      border-color: var(--primary-color);
+      border-color: var(--primary);
+    }
+    b {
+      font-family: cursive;
+      font-size: 20px;
+      color: black;
     }
   }
 }
