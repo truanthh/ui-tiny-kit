@@ -6,6 +6,7 @@ import CheckboxGroup from "@/components/checkbox/CheckboxGroup.vue";
 const checkboxActive = ref(false);
 const checkboxDisabled = ref(true);
 const checkboxDisabledChecked = ref(true);
+const switchActive = ref(false);
 
 const listOfHeroes = ref([
   { name: "Spider-man", id: "h1" },
@@ -48,6 +49,17 @@ const selectedHeroes = ref(["h1", "h2"]);
       name="heroes"
       :options="listOfHeroes"
       v-model:value="selectedHeroes"
+    />
+  </div>
+  <div class="line line_block">
+    <p>{{ switchActive }}</p>
+    <Checkbox
+      label="Switch Active"
+      id="switchactive"
+      name="switchactive"
+      value="nop"
+      v-model:checked="switchActive"
+      type="switch"
     />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-const emit = defineEmits(["update:checked", "blabla"]);
+const emit = defineEmits(["update:checked", "updateCheckboxGroup"]);
 const props = defineProps({
   name: {
     type: String,
@@ -29,12 +29,18 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  type: {
+    type: String,
+    default: "checkbox",
+  },
 });
 
 function handleClick(event) {
   if (props.group) {
-    emit("blabla", { optionId: props.id, checked: event.target.checked });
-    // console.log(props.id);
+    emit("updateCheckboxGroup", {
+      optionId: props.id,
+      checked: event.target.checked,
+    });
   } else {
     emit("update:checked", event.target.checked);
   }
@@ -42,17 +48,22 @@ function handleClick(event) {
 </script>
 
 <template>
-  <input
-    type="checkbox"
-    class="checkbox"
-    :name="name"
-    :id="id"
-    :value="value"
-    :checked="checked"
-    :disabled="disabled"
-    @input="handleClick"
-  />
-  <label :for="id"> {{ label }}</label>
+  <div>
+    <input
+      type="checkbox"
+      :class="[
+        { checkbox: type === 'checkbox' },
+        { switch: type === 'switch' },
+      ]"
+      :name="name"
+      :id="id"
+      :value="value"
+      :checked="checked"
+      :disabled="disabled"
+      @input="handleClick"
+    />
+    <label :for="id"> {{ label }}</label>
+  </div>
 </template>
 <style scoped>
 .checkbox {
@@ -119,7 +130,7 @@ function handleClick(event) {
   & + label {
     cursor: pointer;
     text-indent: -9999px;
-    width: 50px;
+    width: 55px;
     height: 35px;
     background: #fafafa;
     border: 1px solid #adb5bd;

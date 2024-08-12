@@ -28,7 +28,7 @@ const props = defineProps({
   },
 });
 
-function check(params) {
+function updateCheckboxGroup(params) {
   let updateValue = [...props.value];
   if (params.checked) {
     updateValue.push(params.optionId);
@@ -47,7 +47,7 @@ function check(params) {
       :id="option.id"
       :value="option.value"
       :checked="value.includes(option.id)"
-      @blabla="check"
+      @updateCheckboxGroup="updateCheckboxGroup"
       group
     />
   </div>
