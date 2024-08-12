@@ -29,12 +29,12 @@ import Button from "@/components/Button.vue";
   </div>
   <h1 class="heading-2">Outlined</h1>
   <div class="line">
-    <Button label="primary" color="primary" :outlined="true" />
-    <Button label="second" color="second" :outlined="true" />
-    <Button label="success" color="success" :outlined="true" />
-    <Button label="info" color="info" :outlined="true" />
-    <Button label="warning" color="warning" :outlined="true" />
-    <Button label="danger" color="danger" :outlined="true" />
+    <Button label="primary" color="primary" outlined />
+    <Button label="second" color="second" outlined />
+    <Button label="success" color="success" outlined />
+    <Button label="info" color="info" outlined />
+    <Button label="warning" color="warning" outlined />
+    <Button label="danger" color="danger" outlined />
   </div>
   <h1 class="heading-2">Icons</h1>
   <div class="line">
@@ -73,10 +73,4 @@ import Button from "@/components/Button.vue";
   </div>
 </template>
 
-<style scoped>
-.line {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-</style>
+<style scoped></style>

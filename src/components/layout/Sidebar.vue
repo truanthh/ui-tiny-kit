@@ -4,12 +4,15 @@ import { ref } from "vue";
 const links = ref([
   { name: "Typography", href: "/typography" },
   { name: "Button", href: "/button" },
+  { name: "Checkbox", href: "/checkbox" },
 ]);
 </script>
 
 <template>
   <div class="sidebar">
-    <router-link to="/home" class="sidebar__link"> <b>Home </b></router-link>
+    <router-link to="/home" class="sidebar__link home">
+      <b>Home </b></router-link
+    >
     <router-link
       class="sidebar__link"
       v-for="link in links"
@@ -24,30 +27,27 @@ const links = ref([
 <style lang="scss" scoped>
 .sidebar {
   left: 0;
+  top: 0;
   height: 100%;
-  background: #fff;
   position: fixed;
   width: 250px;
   padding: 20px;
-  // transition: 0.1s;
+  transition: 0.2s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
-  transform: translateX(0px);
   &__link {
     display: block;
-    border-radius: 12px;
-    padding: 10px;
-    border: 2px solid #fff;
-    // transition: 0.1s;
+    transition: 0.2s;
     font-weight: bold;
     margin-bottom: 10px;
+    padding: 2px 6px 2px;
     &:hover {
-      border-color: var(--primary);
-    }
-    b {
-      font-family: cursive;
-      font-size: 20px;
       color: black;
     }
   }
+}
+.home {
+  color: black;
+  font-size: 22px;
+  border-bottom: solid 2px black;
 }
 </style>

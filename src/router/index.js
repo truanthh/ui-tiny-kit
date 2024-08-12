@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import TypographyView from "../views/TypographyView.vue";
 import ButtonView from "../views/ButtonView.vue";
+import CheckboxView from "../views/CheckboxView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
       path: "/button",
       name: "button",
       component: ButtonView,
+    },
+    {
+      path: "/checkbox",
+      name: "checkbox",
+      component: CheckboxView,
     },
     {
       path: "/about",
