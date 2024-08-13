@@ -2,7 +2,6 @@
 
 <template>
   <h1 class="heading-1">Typography</h1>
-  <h2 class="heading-1">Heading 1</h2>
   <h2 class="heading-2">Heading 2</h2>
   <h2 class="heading-3">Heading 3</h2>
 </template>
@@ -11,9 +10,8 @@
 .heading {
   &-1 {
     margin: 20px 0px;
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 300;
-    color: green;
   }
   &-2 {
     font-size: 22px;

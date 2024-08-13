@@ -15,6 +15,7 @@ const links = ref([
   { name: "Typography", href: "/typography" },
   { name: "Button", href: "/button" },
   { name: "Checkbox", href: "/checkbox" },
+  { name: "Radiobutton", href: "/radiobutton" },
 ]);
 
 const closeSidebar = () => {
@@ -87,10 +88,14 @@ const closeSidebar = () => {
   &:hover {
     color: green;
   }
-}
-svg {
-  margin-left: auto;
-  font-size: 22px;
-  color: gray;
+  &:hover svg {
+    font-size: 23px;
+    color: green;
+  }
+  svg {
+    margin-left: auto;
+    font-size: 22px;
+    color: gray;
+  }
 }
 </style>

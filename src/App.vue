@@ -10,8 +10,9 @@ import Button from "@/components/Button.vue";
 import CheckboxString from "@/components/Checkbox/Checkbox.vue?raw";
 import ButtonString from "@/components/Button.vue?raw";
 import TypographyString from "@/views/TypographyView.vue?raw";
+import RadiobuttonString from "@/components/Checkbox/Radiobutton.vue?raw";
 
-const isOpenMenu = ref(false);
+const isOpenMenu = ref(true);
 
 const togglMenu = () => {
   isOpenMenu.value = !isOpenMenu.value;
@@ -26,6 +27,7 @@ const componentStrings = {
   "/button": ButtonString,
   "/checkbox": CheckboxString,
   "/typography": TypographyString,
+  "/radiobutton": RadiobuttonString,
 };
 
 watch(route, (newRoute) => {
@@ -85,13 +87,9 @@ const copyToClipboard = async () => {
 .content {
   max-width: 1400px;
   margin-left: 50px;
-  // width: 100%;
   padding: 30px;
   transition: 0.2s;
   overflow-y: auto;
-  &_full {
-    margin-left: 0;
-  }
 }
 .code {
   height: 100%;

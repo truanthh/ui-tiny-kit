@@ -34,7 +34,6 @@ const props = defineProps({
     default: "checkbox",
   },
 });
-
 function handleClick(event) {
   if (props.group) {
     emit("updateCheckboxGroup", {
