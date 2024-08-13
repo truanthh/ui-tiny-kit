@@ -43,10 +43,7 @@ const copyToClipboard = async () => {
 </script>
 
 <template>
-  <div class="container">
-    <!-- <div class="sidebar-toggle" @click="togglMenu" v-if="!isOpenMenu"> -->
-    <!--   &#5125; -->
-    <!-- </div> -->
+  <div :class="['container', { container__sidebarclosed: !isOpenMenu }]">
     <layout-sidebar :openSidebar="isOpenMenu" @close="togglMenu" />
     <div class="content">
       <RouterView />
@@ -81,10 +78,14 @@ const copyToClipboard = async () => {
   display: grid;
   grid-template-columns: auto 1.3fr 1.2fr;
   height: 100vh;
+  &__sidebarclosed {
+    grid-template-columns: 0 auto 1.2fr;
+  }
 }
 .content {
   max-width: 1400px;
   margin-left: 50px;
+  width: 100%;
   padding: 30px;
   transition: 0.2s;
   overflow-y: auto;
@@ -99,21 +100,5 @@ const copyToClipboard = async () => {
   overflow-y: auto;
   background-color: #f6f6f6;
   border-left: solid 2px black;
-}
-
-.sidebar-toggle {
-  position: fixed;
-  left: 0;
-  width: 15px;
-  // background: var(--gray);
-  background-color: #4d4d4d;
-  height: 100%;
-  top: 0;
-  z-index: 1;
-  cursor: pointer;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 </style>
