@@ -14,6 +14,7 @@ import TypographyString from "@/views/TypographyView.vue?raw";
 const route = useRoute();
 const currentPath = ref(route.path);
 const compString = ref(null);
+const codeText = ref(null);
 
 const componentStrings = {
   "/button": ButtonString,
@@ -42,7 +43,7 @@ const copyToClipboard = async () => {
       <Button
         class="copy"
         label="primary"
-        color="primary"
+        color="gray"
         :rounded="true"
         :outlined="true"
         icon="ph:copy"

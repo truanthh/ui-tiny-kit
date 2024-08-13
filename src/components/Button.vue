@@ -103,6 +103,13 @@ const props = defineProps({
       background: var(--danger-hover);
     }
   }
+  &_gray {
+    background: var(--gray);
+    border: 1px solid var(--gray);
+    &:enabled:hover {
+      background: var(--gray-hover);
+    }
+  }
   &:disabled {
     opacity: 0.6;
     cursor: default;
