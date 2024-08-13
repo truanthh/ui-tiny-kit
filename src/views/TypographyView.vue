@@ -13,6 +13,7 @@
     margin: 20px 0px;
     font-size: 34px;
     font-weight: 300;
+    color: green;
   }
   &-2 {
     font-size: 22px;

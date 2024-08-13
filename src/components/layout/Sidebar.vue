@@ -50,7 +50,7 @@ const closeSidebar = () => {
   height: 100%;
   // position: fixed;
   width: 300px;
-  padding: 20px;
+  // padding: 20px;
   transition: 0.2s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
   transform: translateX(-240px);
@@ -64,6 +64,7 @@ const closeSidebar = () => {
     transition: 0.2s;
     font-size: 19px;
     margin-bottom: 12px;
+    padding: 0 20px;
     // border: solid 2px black;
     &:hover {
       // color: var(--gray);
@@ -72,6 +73,10 @@ const closeSidebar = () => {
   }
 }
 .menu {
+  // border: 2px solid black;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
   font-weight: bold;
   color: black;
   font-size: 24px;

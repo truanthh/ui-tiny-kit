@@ -3,7 +3,7 @@ import Button from "@/components/Button.vue";
 </script>
 
 <template>
-  <h1 class="heading-1">Button</h1>
+  <h1 class="heading-1 hdr">Button</h1>
   <h1 class="heading-2">Disabled</h1>
   <div class="line">
     <Button label="primary" color="primary" :disabled="true" />
