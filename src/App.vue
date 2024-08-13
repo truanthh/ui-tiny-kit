@@ -11,6 +11,12 @@ import CheckboxString from "@/components/Checkbox/Checkbox.vue?raw";
 import ButtonString from "@/components/Button.vue?raw";
 import TypographyString from "@/views/TypographyView.vue?raw";
 
+const isOpenMenu = ref(false);
+
+const togglMenu = () => {
+  isOpenMenu.value = !isOpenMenu.value;
+};
+
 const route = useRoute();
 const currentPath = ref(route.path);
 const compString = ref(null);
@@ -38,9 +44,16 @@ const copyToClipboard = async () => {
 
 <template>
   <div class="container">
-    <LayoutSidebar />
+    <!-- <div class="sidebar-toggle" @click="togglMenu" v-if="!isOpenMenu"> -->
+    <!--   &#5125; -->
+    <!-- </div> -->
+    <layout-sidebar :openSidebar="isOpenMenu" @close="togglMenu" />
     <div class="content">
+      <RouterView />
+    </div>
+    <div class="code" ref="codeText" v-if="currentPath !== '/home'">
       <Button
+        v-if="currentPath !== '/home'"
         class="copy"
         label="primary"
         color="gray"
@@ -49,9 +62,6 @@ const copyToClipboard = async () => {
         icon="ph:copy"
         @click="copyToClipboard"
       />
-      <RouterView />
-    </div>
-    <div class="code" ref="codeText">
       <pre> <code> {{ compString}} </code> </pre>
     </div>
   </div>
@@ -66,21 +76,15 @@ const copyToClipboard = async () => {
   -moz-osx-font-smoothing: grayscale;
 }
 .copy {
-  position: absolute;
-  top: 10px;
-  right: 60px;
-  // margin-right: 75px;
-  margin-top: 45px;
 }
 .container {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: auto 1.3fr 1.2fr;
   height: 100vh;
 }
 .content {
-  position: relative;
   max-width: 1400px;
-  margin-left: 250px;
+  margin-left: 50px;
   padding: 30px;
   transition: 0.2s;
   overflow-y: auto;
@@ -93,7 +97,23 @@ const copyToClipboard = async () => {
   width: 100%;
   padding: 10px;
   overflow-y: auto;
-  background-color: #f5f5f5;
+  background-color: #f6f6f6;
   border-left: solid 2px black;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  left: 0;
+  width: 15px;
+  // background: var(--gray);
+  background-color: #4d4d4d;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

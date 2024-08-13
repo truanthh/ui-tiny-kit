@@ -1,18 +1,37 @@
 <script setup>
 import { ref } from "vue";
+import { Icon } from "@iconify/vue";
+
+const emit = defineEmits(["close"]);
+
+const props = defineProps({
+  openSidebar: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 const links = ref([
   { name: "Typography", href: "/typography" },
   { name: "Button", href: "/button" },
   { name: "Checkbox", href: "/checkbox" },
 ]);
+
+const closeSidebar = () => {
+  // if (event.target !== event.currentTarget) {
+  //   return;
+  // }
+  emit("close");
+};
 </script>
 
 <template>
-  <div class="sidebar">
-    <router-link to="/home" class="sidebar__link home">
-      <b>Home </b></router-link
-    >
+  <div :class="['sidebar', { sidebar_isopen: openSidebar }]">
+    <div class="sidebar__link menu" @click.stop="closeSidebar">
+      Menu
+      <Icon icon="vaadin:menu" />
+    </div>
+
     <router-link
       class="sidebar__link"
       v-for="link in links"
@@ -29,25 +48,44 @@ const links = ref([
   left: 0;
   top: 0;
   height: 100%;
-  position: fixed;
-  width: 250px;
+  // position: fixed;
+  width: 300px;
   padding: 20px;
   transition: 0.2s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
+  transform: translateX(-240px);
+  font-family: monospace;
+  &_isopen {
+    transform: translateX(0px);
+  }
   &__link {
     display: block;
+    color: #595959;
     transition: 0.2s;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 2px 6px 2px;
+    font-size: 19px;
+    margin-bottom: 12px;
+    // border: solid 2px black;
     &:hover {
-      color: black;
+      // color: var(--gray);
+      color: orange;
     }
   }
 }
-.home {
+.menu {
+  font-weight: bold;
   color: black;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &:hover {
+    color: green;
+  }
+}
+svg {
+  margin-left: auto;
   font-size: 22px;
-  border-bottom: solid 2px black;
+  color: gray;
 }
 </style>
