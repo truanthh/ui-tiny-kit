@@ -3,7 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import TypographyView from "../views/TypographyView.vue";
 import ButtonView from "../views/ButtonView.vue";
 import CheckboxView from "../views/CheckboxView.vue";
-import RadiobuttonView from "../views/RadiobuttonView.vue";
+import RadioButtonView from "../views/RadiobuttonView.vue";
+import ProgressView from "../views/ProgressView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,7 +33,12 @@ const router = createRouter({
     {
       path: "/radiobutton",
       name: "radiobutton",
-      component: RadiobuttonView,
+      component: RadioButtonView,
+    },
+    {
+      path: "/progress",
+      name: "progress",
+      component: ProgressView,
     },
   ],
 });

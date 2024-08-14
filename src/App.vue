@@ -10,7 +10,7 @@ import Button from "@/components/Button.vue";
 import CheckboxString from "@/components/Checkbox/Checkbox.vue?raw";
 import ButtonString from "@/components/Button.vue?raw";
 import TypographyString from "@/views/TypographyView.vue?raw";
-import RadiobuttonString from "@/components/Checkbox/Radiobutton.vue?raw";
+import RadioButtonString from "@/components/Checkbox/RadioButton.vue?raw";
 
 const isOpenMenu = ref(true);
 
@@ -27,7 +27,7 @@ const componentStrings = {
   "/button": ButtonString,
   "/checkbox": CheckboxString,
   "/typography": TypographyString,
-  "/radiobutton": RadiobuttonString,
+  "/radiobutton": RadioButtonString,
 };
 
 watch(route, (newRoute) => {
@@ -81,7 +81,7 @@ const copyToClipboard = async () => {
   grid-template-columns: auto 1.3fr 1.2fr;
   height: 100vh;
   &__sidebarclosed {
-    grid-template-columns: 60px auto minmax(600px, 1000px);
+    grid-template-columns: 60px auto minmax(25%, 50%);
   }
 }
 .content {
