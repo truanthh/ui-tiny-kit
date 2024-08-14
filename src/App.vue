@@ -2,7 +2,7 @@
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import { ref, watch } from "vue";
 
-import { Icon } from "@Iconify/vue";
+import { Icon } from "@iconify/vue";
 import LayoutSidebar from "@/components/Layout/Sidebar.vue";
 import Button from "@/components/Button.vue";
 
@@ -11,6 +11,7 @@ import CheckboxString from "@/components/Checkbox/Checkbox.vue?raw";
 import ButtonString from "@/components/Button.vue?raw";
 import TypographyString from "@/views/TypographyView.vue?raw";
 import RadioButtonString from "@/components/Checkbox/RadioButton.vue?raw";
+import ProgressString from "@/components/ProgressCircle.vue?raw";
 
 const isOpenMenu = ref(true);
 
@@ -28,6 +29,7 @@ const componentStrings = {
   "/checkbox": CheckboxString,
   "/typography": TypographyString,
   "/radiobutton": RadioButtonString,
+  "/progress": ProgressString,
 };
 
 watch(route, (newRoute) => {

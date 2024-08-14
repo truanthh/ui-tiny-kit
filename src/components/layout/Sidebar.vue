@@ -17,6 +17,7 @@ const links = ref([
   { name: "Checkbox", href: "/checkbox" },
   { name: "Radiobutton", href: "/radiobutton" },
   { name: "Progress", href: "/progress" },
+  { name: "Input", href: "/input" },
 ]);
 
 const closeSidebar = () => {

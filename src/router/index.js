@@ -5,6 +5,7 @@ import ButtonView from "../views/ButtonView.vue";
 import CheckboxView from "../views/CheckboxView.vue";
 import RadioButtonView from "../views/RadiobuttonView.vue";
 import ProgressView from "../views/ProgressView.vue";
+import InputView from "../views/InputView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,11 @@ const router = createRouter({
       path: "/progress",
       name: "progress",
       component: ProgressView,
+    },
+    {
+      path: "/input",
+      name: "input",
+      component: InputView,
     },
   ],
 });
