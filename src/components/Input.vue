@@ -51,7 +51,13 @@ function updateValue() {
     <label :for="name" class="input-label" :style="{ width: width }">{{
       label
     }}</label>
-    <div class="form-error" v-for="element of error" :key="element.$uid">
+    <!-- added v-if value here, so we hiding error if the field is empty, but error still persists -->
+    <div
+      class="form-error"
+      v-if="value"
+      v-for="element of error"
+      :key="element.$uid"
+    >
       <div class="form-error__message">{{ element.$message }}</div>
     </div>
   </div>
