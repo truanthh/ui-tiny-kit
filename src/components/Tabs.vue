@@ -65,6 +65,7 @@ const tabClick = (tabName) => {
     padding: 20px;
     border-radius: 7px;
     background: #fff;
+    border: 1px solid var(--primary-hover);
   }
 }
 </style>

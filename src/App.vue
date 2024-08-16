@@ -83,11 +83,11 @@ const copyToClipboard = async () => {
   grid-template-columns: auto 1.3fr 1.2fr;
   height: 100vh;
   &__sidebarclosed {
-    grid-template-columns: 60px auto minmax(25%, 50%);
+    grid-template-columns: 60px auto minmax(25%, 30%);
   }
 }
 .content {
-  max-width: 1400px;
+  width: 100%;
   margin-left: 50px;
   padding: 30px;
   transition: 0.2s;

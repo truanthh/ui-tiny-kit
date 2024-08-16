@@ -19,6 +19,7 @@ const links = ref([
   { name: "Progress", href: "/progress" },
   { name: "Input", href: "/input" },
   { name: "Tabs", href: "/tabs" },
+  { name: "Table", href: "/table" },
 ]);
 
 const closeSidebar = () => {

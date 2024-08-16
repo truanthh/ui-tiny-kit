@@ -7,6 +7,7 @@ import RadioButtonView from "../views/RadiobuttonView.vue";
 import ProgressView from "../views/ProgressView.vue";
 import InputView from "../views/InputView.vue";
 import TabsView from "../views/TabsView.vue";
+import TableView from "../views/TableView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,6 +52,11 @@ const router = createRouter({
       path: "/tabs",
       name: "tabs",
       component: TabsView,
+    },
+    {
+      path: "/table",
+      name: "table",
+      component: TableView,
     },
   ],
 });
