@@ -5,6 +5,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+// circumference = 2 * pi * radius
 </script>
 
 <template>
