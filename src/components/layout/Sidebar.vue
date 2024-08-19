@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
 
-const emit = defineEmits(["close"]);
+const emit = defineEmits(["closeSidebar"]);
 
 const props = defineProps({
   openSidebar: {
@@ -26,7 +26,7 @@ const closeSidebar = () => {
   // if (event.target !== event.currentTarget) {
   //   return;
   // }
-  emit("close");
+  emit("closeSidebar");
 };
 </script>
 

@@ -53,12 +53,14 @@ const copyToClipboard = async () => {
 
 <template>
   <div class="container">
-    <layout-sidebar :openSidebar="isOpenMenu" @close="toggleMenu" />
+    <layout-sidebar :openSidebar="isOpenMenu" @closeSidebar="toggleMenu" />
     <div :class="['content', { content_full: !isOpenMenu }]">
+      <Button outlined label="show code" @click="toggleCodeDrawer" />
       <RouterView />
     </div>
     <layout-code-drawer
       :openCodeDrawer="isOpenCodeDrawer"
+      :compString
       @close="toggleCodeDrawer"
     />
   </div>
