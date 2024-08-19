@@ -28,7 +28,7 @@ const props = defineProps({
   top: 0;
   height: 100%;
   width: 800px;
-  font-size: 18px;
+  font-size: 16px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
   transform: translateX(calc(100% + 300px));
   background-color: #fafafa;
