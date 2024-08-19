@@ -51,9 +51,9 @@ const closeSidebar = () => {
 <style lang="scss" scoped>
 .sidebar {
   left: 0;
-  top: 0;
+  // top: 0;
   height: 100%;
-  // position: fixed;
+  position: fixed;
   width: 300px;
   // padding: 20px;
   transition: 0.2s;

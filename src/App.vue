@@ -4,6 +4,7 @@ import { ref, watch } from "vue";
 
 import { Icon } from "@iconify/vue";
 import LayoutSidebar from "@/components/Layout/Sidebar.vue";
+import LayoutCodeDrawer from "@/components/Layout/CodeDrawer.vue";
 import Button from "@/components/Button.vue";
 
 // components raw text data
@@ -14,9 +15,13 @@ import RadioButtonString from "@/components/Checkbox/RadioButton.vue?raw";
 import ProgressString from "@/components/ProgressCircle.vue?raw";
 
 const isOpenMenu = ref(true);
+const isOpenCodeDrawer = ref(true);
 
-const togglMenu = () => {
+const toggleMenu = () => {
   isOpenMenu.value = !isOpenMenu.value;
+};
+const toggleCodeDrawer = () => {
+  isOpenCodeDrawer.value = !isOpenCodeDrawer.value;
 };
 
 const route = useRoute();
@@ -47,24 +52,15 @@ const copyToClipboard = async () => {
 </script>
 
 <template>
-  <div :class="['container', { container__sidebarclosed: !isOpenMenu }]">
-    <layout-sidebar :openSidebar="isOpenMenu" @close="togglMenu" />
-    <div class="content">
+  <div class="container">
+    <layout-sidebar :openSidebar="isOpenMenu" @close="toggleMenu" />
+    <div :class="['content', { content_full: !isOpenMenu }]">
       <RouterView />
     </div>
-    <div class="code" ref="codeText" v-if="currentPath !== '/home'">
-      <Button
-        v-if="currentPath !== '/home'"
-        class="copy"
-        label="primary"
-        color="gray"
-        :rounded="true"
-        :outlined="true"
-        icon="ph:copy"
-        @click="copyToClipboard"
-      />
-      <pre> <code> {{ compString}} </code> </pre>
-    </div>
+    <layout-code-drawer
+      :openCodeDrawer="isOpenCodeDrawer"
+      @close="toggleCodeDrawer"
+    />
   </div>
 </template>
 
@@ -76,29 +72,16 @@ const copyToClipboard = async () => {
   -webkit-font-smoothing: antialised;
   -moz-osx-font-smoothing: grayscale;
 }
-.copy {
-}
-.container {
-  display: grid;
-  grid-template-columns: auto 1.3fr 1.2fr;
-  height: 100vh;
-  &__sidebarclosed {
-    grid-template-columns: 60px auto minmax(25%, 30%);
-  }
-}
 .content {
-  width: 100%;
-  margin-left: 50px;
+  // width: 100%;
+  max-width: 1700px;
+  margin-left: calc(300px + 50px);
+  // margin-right: 300px;
   padding: 30px;
   transition: 0.2s;
   overflow-y: auto;
-}
-.code {
-  height: 100%;
-  width: 100%;
-  padding: 10px;
-  overflow-y: auto;
-  background-color: #f6f6f6;
-  border-left: solid 2px black;
+  &_full {
+    margin-left: 100px;
+  }
 }
 </style>
