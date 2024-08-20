@@ -51,7 +51,7 @@ const handleClick = () => {
   <label :for="id"> {{ label }} </label>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .radiobutton {
   position: absolute;
   z-index: -1;

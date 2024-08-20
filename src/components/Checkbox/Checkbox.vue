@@ -64,7 +64,7 @@ function handleClick(event) {
     <label :for="id"> {{ label }}</label>
   </div>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 .checkbox {
   position: absolute;
   z-index: -1;
