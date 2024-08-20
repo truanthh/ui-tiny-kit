@@ -18,7 +18,7 @@ import TabsString from "@/components/Tabs.vue?raw";
 import TableString from "@/components/Table/BaseTable.vue?raw";
 
 const isOpenMenu = ref(true);
-const isOpenCodeDrawer = ref(true);
+const isOpenCodeDrawer = ref(false);
 
 const toggleMenu = () => {
   isOpenMenu.value = !isOpenMenu.value;
