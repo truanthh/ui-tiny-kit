@@ -55,6 +55,9 @@ function headerClick(name) {
     align-items: center;
     border-bottom: 2px solid #eeeff4;
     background: #fff;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
     &__name {
       display: flex;
       justify-content: flex-start;
