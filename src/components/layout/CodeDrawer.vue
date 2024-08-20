@@ -13,10 +13,22 @@ const props = defineProps({
     required: false,
   },
 });
+
+// copyToClipboard
 </script>
 
 <template>
   <div :class="['codedrawer', { codedrawer_isopen: openCodeDrawer }]">
+    <Button
+      v-if="currentPath !== '/home'"
+      class="copy"
+      label="primary"
+      color="gray"
+      :rounded="true"
+      :outlined="true"
+      icon="ph:copy"
+      @click="copyToClipboard"
+    />
     <pre><code> {{ compString}}</code></pre>
   </div>
 </template>
