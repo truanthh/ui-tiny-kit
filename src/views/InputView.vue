@@ -70,6 +70,7 @@ const submitForm = () => {
 
 <template>
   <h1 class="heading-1">Input</h1>
+  <h3 class="heading-3">+ vuelidate</h3>
   <br />
   <form @submit.prevent="submitForm">
     <Input

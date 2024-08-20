@@ -45,6 +45,14 @@ const closeSidebar = () => {
     >
       {{ link.name }}
     </router-link>
+
+    <a
+      class="sidebar__github"
+      href="https://github.com/truanthh"
+      target="_blank"
+    >
+      <Icon icon="mdi:github" :style="{ fontSize: '28px' }" />
+    </a>
   </div>
 </template>
 
@@ -75,6 +83,14 @@ const closeSidebar = () => {
       // color: var(--gray);
       color: orange;
     }
+  }
+  &__github {
+    // align-self: end;
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    cursor: pointer;
+    color: #333333;
   }
 }
 .menu {

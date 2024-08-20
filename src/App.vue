@@ -13,6 +13,9 @@ import ButtonString from "@/components/Button.vue?raw";
 import TypographyString from "@/views/TypographyView.vue?raw";
 import RadioButtonString from "@/components/Checkbox/RadioButton.vue?raw";
 import ProgressString from "@/components/ProgressCircle.vue?raw";
+import InputString from "@/components/Input.vue?raw";
+import TabsString from "@/components/Tabs.vue?raw";
+import TableString from "@/components/Table/BaseTable.vue?raw";
 
 const isOpenMenu = ref(true);
 const isOpenCodeDrawer = ref(true);
@@ -27,7 +30,6 @@ const toggleCodeDrawer = () => {
 const route = useRoute();
 const currentPath = ref(route.path);
 const compString = ref(null);
-const codeText = ref(null);
 
 const componentStrings = {
   "/button": ButtonString,
@@ -35,33 +37,33 @@ const componentStrings = {
   "/typography": TypographyString,
   "/radiobutton": RadioButtonString,
   "/progress": ProgressString,
+  "/input": InputString,
+  "/tabs": TabsString,
+  "/table": TableString,
 };
 
 watch(route, (newRoute) => {
   currentPath.value = newRoute.path;
   compString.value = componentStrings[currentPath.value];
 });
-
-const copyToClipboard = async () => {
-  try {
-    await navigator.clipboard.writeText(codeText.value.innerText);
-  } catch (error) {
-    console.error("Не удалось скопировать текст!");
-  }
-};
 </script>
 
 <template>
   <div class="container">
     <layout-sidebar :openSidebar="isOpenMenu" @closeSidebar="toggleMenu" />
     <div :class="['content', { content_full: !isOpenMenu }]">
-      <Button outlined label="show code" @click="toggleCodeDrawer" />
+      <Button
+        outlined
+        color="gray"
+        icon="solar:document-outline"
+        @click="toggleCodeDrawer"
+      />
       <RouterView />
     </div>
     <layout-code-drawer
       :openCodeDrawer="isOpenCodeDrawer"
       :compString
-      @close="toggleCodeDrawer"
+      @closeCodeDrawer="toggleCodeDrawer"
     />
   </div>
 </template>

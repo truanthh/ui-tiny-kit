@@ -14,18 +14,35 @@ const props = defineProps({
   },
 });
 
-// copyToClipboard
+const closeDrawer = () => {
+  emit("closeCodeDrawer");
+};
+
+const copyToClipboard = async () => {
+  try {
+    await navigator.clipboard.writeText(props.compString);
+  } catch (error) {
+    console.error("Не удалось скопировать текст!");
+  }
+};
 </script>
 
 <template>
   <div :class="['codedrawer', { codedrawer_isopen: openCodeDrawer }]">
     <Button
-      v-if="currentPath !== '/home'"
-      class="copy"
-      label="primary"
+      class="hide"
       color="gray"
-      :rounded="true"
-      :outlined="true"
+      icon="fa-solid:angle-right"
+      rounded
+      outlined
+      @click="closeDrawer"
+    />
+    <br />
+    <Button
+      class="copy"
+      color="gray"
+      rounded
+      outlined
       icon="ph:copy"
       @click="copyToClipboard"
     />
@@ -39,11 +56,11 @@ const props = defineProps({
   right: 0;
   top: 0;
   height: 100%;
-  width: 800px;
+  width: 900px;
   font-size: 16px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
   transform: translateX(calc(100% + 300px));
-  background-color: #fafafa;
+  background-color: #f2f2f2;
   padding: 10px;
   overflow-y: auto;
   transition: 0.2s;
