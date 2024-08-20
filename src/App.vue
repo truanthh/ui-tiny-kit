@@ -50,7 +50,11 @@ watch(route, (newRoute) => {
 
 <template>
   <div class="container">
-    <layout-sidebar :openSidebar="isOpenMenu" @closeSidebar="toggleMenu" />
+    <layout-sidebar
+      :openSidebar="isOpenMenu"
+      @closeSidebar="toggleMenu"
+      :currentPage="currentPath"
+    />
     <div :class="['content', { content_full: !isOpenMenu }]">
       <Button
         outlined

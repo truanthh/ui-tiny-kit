@@ -9,6 +9,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  currentPage: {
+    type: String,
+    default: "",
+  },
 });
 
 const links = ref([
@@ -28,6 +32,8 @@ const closeSidebar = () => {
   // }
   emit("closeSidebar");
 };
+
+const arr = ref([1, 2, 3, 4, 5]);
 </script>
 
 <template>
@@ -38,10 +44,13 @@ const closeSidebar = () => {
     </div>
 
     <router-link
-      class="sidebar__link"
       v-for="link in links"
       :key="link.name"
       :to="link.href"
+      :class="[
+        'sidebar__link',
+        { sidebar__link__active: currentPage === link.href },
+      ]"
     >
       {{ link.name }}
     </router-link>
@@ -78,11 +87,29 @@ const closeSidebar = () => {
     font-size: 19px;
     margin-bottom: 12px;
     padding: 0 20px;
-    // border: solid 2px black;
+    position: relative;
+    &__active {
+      position: relative;
+      &::before {
+        position: absolute;
+        left: 7px;
+        top: 9px;
+        content: "";
+        background-color: orange;
+        width: 4px;
+        height: 4px;
+        display: inline-block;
+        border-radius: 10px;
+        margin-right: 4px;
+      }
+    }
     &:hover {
       // color: var(--gray);
       color: orange;
     }
+    // &__active {
+    //   color: white;
+    // }
   }
   &__github {
     // align-self: end;
