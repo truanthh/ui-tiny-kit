@@ -11,7 +11,7 @@ import Button from "@/components/Button.vue";
 import CheckboxString from "@/components/Checkbox/Checkbox.vue?raw";
 import ButtonString from "@/components/Button.vue?raw";
 import TypographyString from "@/views/TypographyView.vue?raw";
-import RadioButtonString from "@/components/Checkbox/RadioButton.vue?raw";
+import RadiobuttonString from "@/components/Checkbox/Radiobutton.vue?raw";
 import ProgressString from "@/components/ProgressCircle.vue?raw";
 import InputString from "@/components/Input.vue?raw";
 import TabsString from "@/components/Tabs.vue?raw";
@@ -35,7 +35,7 @@ const componentStrings = {
   "/button": ButtonString,
   "/checkbox": CheckboxString,
   "/typography": TypographyString,
-  "/radiobutton": RadioButtonString,
+  "/radiobutton": RadiobuttonString,
   "/progress": ProgressString,
   "/input": InputString,
   "/tabs": TabsString,
