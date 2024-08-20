@@ -34,6 +34,7 @@ const props = defineProps({
   background-color: #fafafa;
   padding: 10px;
   overflow-y: auto;
+  transition: 0.2s;
   &_isopen {
     transform: translateX(0px);
   }
