@@ -57,6 +57,7 @@ watch(route, (newRoute) => {
     />
     <div :class="['content', { content_full: !isOpenMenu }]">
       <Button
+        v-if="currentPath !== '/home'"
         outlined
         color="gray"
         icon="solar:document-outline"
