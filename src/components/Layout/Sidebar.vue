@@ -57,7 +57,7 @@ const arr = ref([1, 2, 3, 4, 5]);
 
     <a
       class="sidebar__github"
-      href="https://github.com/truanthh"
+      href="https://github.com/truanthh/ui-tiny-kit"
       target="_blank"
     >
       <Icon icon="mdi:github" :style="{ fontSize: '28px' }" />
